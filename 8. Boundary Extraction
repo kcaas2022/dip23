@@ -1,0 +1,6 @@
+I=imread('flower.jpg');
+if size(I,3)==3, I=rgb2gray(I); end
+E=imerode(I,strel('disk',4,0));
+B=imsubtract(I,E);
+subplot(1,2,1);imshow(I);title('Original');
+subplot(1,2,2);imshow(B,[]);title('Boundary');
