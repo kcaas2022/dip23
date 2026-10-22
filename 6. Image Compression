@@ -1,0 +1,7 @@
+I=imread('mage3.jpg');
+if size(I,3)==3, I=rgb2gray(I); end
+n=5; w='sym8';
+[C,L]=wavedec2(I,n,w);
+X=wdencmp('gbl',C,L,w,n,30,'h',1);
+subplot(1,2,1); imshow(I); title('Original');
+subplot(1,2,2); imshow(X,[]); title('Compressed');
