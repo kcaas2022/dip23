@@ -1,0 +1,6 @@
+I=imread('logo.png');
+if size(I,3)==3, I=rgb2gray(I); end
+subplot(2,2,1); imshow(I); title('Original');
+subplot(2,2,2); imshow(imadjust(I)); title('Adjusted');
+subplot(2,2,3); imshow(histeq(I)); title('Histogram Equalization');
+subplot(2,2,4); imshow(adapthisteq(I)); title('Adaptive Equalization');
