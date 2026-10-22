@@ -1,0 +1,6 @@
+I=imread('nature.jpg');
+if size(I,3)==3, I=rgb2gray(I); end
+B=imopen(I,strel('disk',70));
+R=imsubtract(I,B);
+subplot(1,2,1);imshow(I);title('Original');
+subplot(1,2,2);imshow(R);title('Subtracted');
