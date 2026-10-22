@@ -1,0 +1,7 @@
+I=imread('dipedge.jpg');
+if size(I,3)==3, I=rgb2gray(I); end
+subplot(2,3,1); imshow(I); title('Original');
+subplot(2,3,2); imshow(edge(I,'sobel')); title('Sobel');
+subplot(2,3,3); imshow(edge(I,'canny')); title('Canny');
+subplot(2,3,4); imshow(edge(I,'prewitt')); title('Prewitt');
+subplot(2,3,5); imshow(edge(I,'roberts')); title('Roberts');
