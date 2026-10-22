@@ -1,0 +1,8 @@
+I=im2double(imread('building.jpg'));
+P=fspecial('motion',21,11);
+B=imfilter(I,P,'conv','circular');
+nsr=0.0001/var(I(:));
+R=deconvwnr(B,P,nsr);
+subplot(1,3,1); imshow(I); title('Original');
+subplot(1,3,2); imshow(B); title('Blurred');
+subplot(1,3,3); imshow(R); title('Restored');
