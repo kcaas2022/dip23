@@ -1,0 +1,7 @@
+I=imread('diphist1.jpg');
+if size(I,3)==3, I=rgb2gray(I); end
+H=histeq(I);
+subplot(2,2,1); imshow(I); title('Original');
+subplot(2,2,2); imshow(H); title('Equalized');
+subplot(2,2,3); imhist(I); title('Original Histogram');
+subplot(2,2,4); imhist(H); title('Equalized Histogram');
